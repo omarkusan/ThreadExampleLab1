@@ -1,5 +1,4 @@
-package com.cn.ThreadExampleLab1;
-
+package com.cn.thread4GitHub;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Timer;
@@ -11,6 +10,7 @@ public class PrimeNumber extends Thread {
 	public PrimeNumber(int startingNumber,int endingNumber) {
 		this.StartingNumber=startingNumber;
 		this.EndingNumber=endingNumber;
+		primeNumbers=new ArrayList<Integer>();
 	}
 	
 	public int getStartingNumber() {
@@ -27,6 +27,9 @@ public class PrimeNumber extends Thread {
 	public void setEndingNumber(int endingNumber) {
 		EndingNumber = endingNumber;
 	}
+	public ArrayList<Integer> getPrimeNumbers(){
+		return primeNumbers;
+	}
 
 	public void run(){
 		for(int i=StartingNumber;i<=EndingNumber;i++){
@@ -41,7 +44,8 @@ public class PrimeNumber extends Thread {
 				}
 			}
 			if(isPrime){
-				System.out.println(num);
+				primeNumbers.add(num);
+//				System.out.println(num);
 			}
 		}
 	}
