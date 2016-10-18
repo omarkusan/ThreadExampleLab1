@@ -11,17 +11,17 @@ public class Application {
 	public static void main(String[] args) {
 		ArrayList<PrimeNumber> primeNumbers = new ArrayList<PrimeNumber>();
 		ArrayList<Integer> primenumbers = new ArrayList<Integer>();
-		PrimeNumber primeNumber1 = new PrimeNumber(1, 20);
-		PrimeNumber primeNumber2 = new PrimeNumber(21, 40);
-		PrimeNumber primeNumber3 = new PrimeNumber(41, 60);
-		PrimeNumber primeNumber4 = new PrimeNumber(61, 80);
-		PrimeNumber primeNumber5 = new PrimeNumber(81, 100);
+		PrimeNumber primeNumber1 = new PrimeNumber(1, 200000);
+		PrimeNumber primeNumber2 = new PrimeNumber(200001, 400000);
+		PrimeNumber primeNumber3 = new PrimeNumber(400001, 600000);
+		PrimeNumber primeNumber4 = new PrimeNumber(600001, 800000);
+		PrimeNumber primeNumber5 = new PrimeNumber(800001, 1000000);
 		primeNumbers.add(primeNumber1);
 		primeNumbers.add(primeNumber2);
 		primeNumbers.add(primeNumber3);
 		primeNumbers.add(primeNumber4);
 		primeNumbers.add(primeNumber5);
-		System.out.println("**************");
+		
 		for (PrimeNumber primeNumber : primeNumbers) {
 			primeNumber.start();
 		}
@@ -32,6 +32,7 @@ public class Application {
 				e.printStackTrace();
 			}
 		}
+		System.out.println("calculating prime numbers.......");
 		for (PrimeNumber primeNumber : primeNumbers) {
 			for (Integer Number : primeNumber.getPrimeNumbers()) {
 				primenumbers.add(Number);

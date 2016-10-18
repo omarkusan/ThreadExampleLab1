@@ -36,7 +36,7 @@ public class PrimeNumber extends Thread {
 			int temp;
 			boolean isPrime=true;
 			int num=i;
-			for(int j=2;j<=num/2;j++){
+			for(int j=2;j<=(int)Math.round(Math.sqrt(num));j++){
 				temp=num%j;
 				if(temp==0){
 					isPrime=false;
@@ -45,8 +45,10 @@ public class PrimeNumber extends Thread {
 			}
 			if(isPrime){
 				primeNumbers.add(num);
-//				System.out.println(num);
 			}
 		}
+	}
+	public void  chouch1(){
+		
 	}
 }
